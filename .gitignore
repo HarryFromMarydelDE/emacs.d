@@ -1,0 +1,7 @@
+*
+*~
+\#*\#
+!init.el
+!.gitignore
+!/lisp/
+!/lisp/*.el
