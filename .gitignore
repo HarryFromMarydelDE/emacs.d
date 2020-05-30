@@ -4,4 +4,5 @@
 !init.el
 !.gitignore
 !/lisp/
+/lisp/*
 !/lisp/*.el
