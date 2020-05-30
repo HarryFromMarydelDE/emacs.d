@@ -92,7 +92,7 @@
 
 ;; git
 (global-unset-key (kbd "C-x g"))
-(global-set-key (kbd "<f5>") 'git-status)
+(global-set-key (kbd "<f5>") 'magit-status)
 
 ;; window navigation
 ;; f11 and f12 navigate left and right through windows
