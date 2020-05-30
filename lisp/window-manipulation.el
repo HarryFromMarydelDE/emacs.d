@@ -92,6 +92,23 @@ is non-nil."
       (evenly-split-window (1- splits) orientation no-make-atom
 			   window-list))))
 
-(defun move-buffer-other-window ())
+(defun current-buffer-other-window (count)
+  "Display current buffer to another window in the cyclic ordering of windows.
+COUNT specifies the number of windows to skip, starting with the
+selected window, before making the selection.  If COUNT is
+positive, skip COUNT windows forwards.  If COUNT is negative,
+skip -COUNT windows backwards.  COUNT zero means do not skip any
+window, so select the selected window.  In an interactive call,
+COUNT is the numeric prefix argument.  Returns nil."
+  (interactive "p")
+  ;; store information on original buffer position
+  (let ((original-buffer (current-buffer))
+	(original-point (point))
+	new-window)
+    (bury-buffer) ; remove buffer from current window
+    (other-window count) ; change selected window
+    (switch-to-buffer original-buffer) ; bring buffer to new window
+    (goto-char original-point) ; restore point
+    ))
 
 (defun close-all-buffers-by-mode ())

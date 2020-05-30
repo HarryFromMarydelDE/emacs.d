@@ -98,6 +98,12 @@
 (global-set-key (kbd "<f12>") (lambda ()
 				(interactive)
 				(other-window 1)))
+(global-set-key (kbd "C-<f11>") (lambda ()
+				(interactive)
+				(current-buffer-other-window -1)))
+(global-set-key (kbd "C-<f12>") (lambda ()
+				(interactive)
+				(current-buffer-other-window 1)))
 
 ;; finding and saving files and buffers
 ;; f8 changes buffer f9 finds f10 saves Ctrl-10 kills the buffer
