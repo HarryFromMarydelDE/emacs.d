@@ -90,6 +90,10 @@
   (define-key company-active-map (kbd "C-n") #'company-select-next)
   (define-key company-active-map (kbd "C-p") #'company-select-previous))
 
+;; git
+(global-set-key (kbd "C-x g") nill)
+(global-set-key (kbd "<f5>") 'git-status)
+
 ;; window navigation
 ;; f11 and f12 navigate left and right through windows
 (global-set-key (kbd "<f11>") (lambda ()
@@ -107,7 +111,7 @@
 
 ;; finding and saving files and buffers
 ;; f8 changes buffer f9 finds f10 saves Ctrl-10 kills the buffer
-(global-set-key (kbd "<f8>") 'switch-to-buffer)
+(global-unset-key (kbd "<f8>"))
 (global-set-key (kbd "<f9>") 'find-file)
 (global-set-key (kbd "<f10>") 'save-buffer)
 (global-set-key (kbd "C-<f10>") 'kill-buffer-with-save)
