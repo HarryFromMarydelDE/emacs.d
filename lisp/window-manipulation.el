@@ -101,14 +101,13 @@ skip -COUNT windows backwards.  COUNT zero means do not skip any
 window, so select the selected window.  In an interactive call,
 COUNT is the numeric prefix argument.  Returns nil."
   (interactive "p")
-  ;; store information on original buffer position
+  ;; store information on original buffer status
   (let ((original-buffer (current-buffer))
 	(original-point (point))
 	new-window)
     (bury-buffer) ; remove buffer from current window
     (other-window count) ; change selected window
     (switch-to-buffer original-buffer) ; bring buffer to new window
-    (goto-char original-point) ; restore point
-    ))
+    (goto-char original-point))) ; restore point
 
 (defun close-all-buffers-by-mode ())
