@@ -11,6 +11,7 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 (load "window-manipulation")
 (load "buffer-manipulation")
+(load "web-editing")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -126,6 +127,8 @@
 
 ;; development
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
+(with-eval-after-load
+    'web-mode (define-key web-mode-map (kbd "M-r") 'web-mode-element-unwrap))
 
 ;; web development
 ;; impatient mode
