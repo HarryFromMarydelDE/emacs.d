@@ -116,6 +116,7 @@
 (global-set-key (kbd "<f9>") 'find-file)
 (global-set-key (kbd "<f10>") 'save-buffer)
 (global-set-key (kbd "C-<f10>") 'kill-buffer-with-save)
+(global-set-key (kbd "M-<f10>") 'write-file)
 
 ;; cutting and pasting, kill ring, cursor
 (setq kill-do-not-save-duplicates t) ; no duplicate entries in kill ring
