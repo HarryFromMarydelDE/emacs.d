@@ -97,13 +97,16 @@ non-nil."
 			     window-list)))))
 
 (defun current-buffer-other-window (count)
-  "Display current buffer to another window in the cyclic ordering of windows.
-COUNT specifies the number of windows to skip, starting with the
-selected window, before making the selection.  If COUNT is
-positive, skip COUNT windows forwards.  If COUNT is negative,
-skip -COUNT windows backwards.  COUNT zero means do not skip any
-window, so select the selected window.  In an interactive call,
-COUNT is the numeric prefix argument.  Returns nil."
+  "Move current buffer to another window in the cyclic ordering of windows.
+Displays the current buffer to the window which would have been
+selected by other-window (COUNT). COUNT specifies the number of
+windows to skip, starting with the selected window, before making
+the selection.  If COUNT is positive, skip COUNT windows
+forwards.  If COUNT is negative, skip -COUNT windows backwards.
+COUNT zero means do not skip any window, so select the selected
+window. Original buffer displays the next window in it's buffer
+list. In an interactive call, COUNT is the numeric prefix
+argument.  Returns nil."
   (interactive "p")
   ;; store information on original buffer status
   (let ((original-buffer (current-buffer))
