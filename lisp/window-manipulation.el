@@ -13,8 +13,7 @@ windows created, from left to right."
     (set-frame-parameter nil 'fullscreen fullscreen))
   (let* ((window-list (evenly-split-window 3))
 	 (left-window (nth 0 window-list))
-	 ; not sure why this is in this spot, but it is
-	 (right-window (nth 1 window-list)))
+	 (right-window (nth 2 window-list)))
     (customize-set-variable
      'display-buffer-alist
      (cons `("\\*\\(Help\\|Info\\)\\*"
