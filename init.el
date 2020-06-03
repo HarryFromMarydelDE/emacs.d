@@ -12,6 +12,7 @@
 (load "window-manipulation")
 (load "buffer-manipulation")
 (load "web-editing")
+(load "convenience-functions")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
