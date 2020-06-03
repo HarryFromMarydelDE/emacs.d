@@ -81,9 +81,8 @@ is non-nil."
 	  (fset 'get-size 'window-total-height)
 	  (setq side 'below))
       ;; calculate size of new window making sure any modulus goes to
-      ;; current window. new-size is negative because we are specifying
-      ;; new window's size instead of current window.
-      (setq new-size (- (floor (get-size current-window 'floor) splits)))
+      ;; current window.
+      (setq new-size (floor (get-size current-window 'floor) splits))
       (setq window-list ; split window and add new window to window list
 	    (append window-list
 		    (list (split-window current-window new-size side))))
