@@ -6,7 +6,7 @@
   "Create a window configuration ideal for use as an IDE.
 Divides the current window into three equal width windows, with
 the left-most reserved for *Help* and *info*. If FULLSCREEN is
-non-nil, set fullscreen window parameter to value, Return list of
+non-nil, set fullscreen window parameter to value. Return list of
 windows created, from left to right."
   (interactive)
   (when fullscreen
