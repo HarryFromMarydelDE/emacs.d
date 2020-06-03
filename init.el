@@ -92,9 +92,6 @@
   (define-key company-active-map (kbd "C-n") #'company-select-next)
   (define-key company-active-map (kbd "C-p") #'company-select-previous))
 
-;; git
-(global-unset-key (kbd "C-x g"))
-(global-set-key (kbd "<f5>") 'magit-status)
 
 ;; window navigation
 ;; f11 and f12 navigate left and right through windows
@@ -129,6 +126,10 @@
 
 ;; development
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
+;; git
+(global-unset-key (kbd "C-x g"))
+(global-set-key (kbd "<f5>") 'magit-status)
+(add-hook 'after-save-hook 'magit-after-save-refresh-status t)
 
 ;; web development
 (with-eval-after-load 'web-mode
