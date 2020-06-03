@@ -129,10 +129,11 @@
 
 ;; development
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
-(with-eval-after-load
-    'web-mode (define-key web-mode-map (kbd "M-r") 'web-mode-element-unwrap))
 
 ;; web development
+(with-eval-after-load 'web-mode
+  (define-key web-mode-map (kbd "M-r") 'web-mode-element-unwrap)
+  (define-key web-mode-map (kbd "<f1>") 'web-mode-element-wrap))
 ;; impatient mode
 (httpd-start) ; start http server
 (setq imp-default-user-filters
