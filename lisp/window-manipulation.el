@@ -65,8 +65,8 @@ is non-nil."
     (error "Must split into at least one window"))
   
   (let ((side 'right) ; side along which the split will take place
+	(get-size 'window-total-width)  ; function to retrieve window's size
 	(current-window (selected-window))
-	get-size  ; function to retrieve window's size
 	new-size) ; size of new window
     (unless window-list ; we start with a list of just the current window
       (setq window-list (list current-window)))
@@ -76,11 +76,10 @@ is non-nil."
 	    (when (cdr window-list)  ; single windows are already atomic
 	      (window-make-atom (window-parent (car window-list)))))
 	  window-list) ; return final window list
-      (if (eq orientation 'vertical) ; choose size function and side
-				     ; if necessary
-	  (progn (fset 'get-size 'window-total-height)
-		 (setq side 'below))
-	(fset 'get-size 'window-total-width))
+      (when (eq orientation 'vertical)  ; choose size function and side
+					; if necessary
+	  (fset 'get-size 'window-total-height)
+	  (setq side 'below))
       ;; calculate size of new window making sure any modulus goes to
       ;; current window. new-size is negative because we are specifying
       ;; new window's size instead of current window.
@@ -88,6 +87,7 @@ is non-nil."
       (setq window-list ; split window and add new window to window list
 	    (append window-list
 		    (list (split-window current-window new-size side))))
+      (select-window (list-last-item window-list))
       ;; continue until done
       (evenly-split-window (1- splits) orientation no-make-atom
 			   window-list))))
