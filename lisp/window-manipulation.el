@@ -65,31 +65,33 @@ is non-nil."
       (error "Must split into at least one window"))
     
     (let ((side 'right) ; side along which the split will take place
-          (get-size 'window-total-width) ; function to retrieve window's size
-          (current-window (selected-window))
-          new-size)             ; size of new window
+	  (get-size 'window-total-width) ; function to retrieve window's size
+	  (current-window (selected-window))
+	  new-size)		; size of new window
       (unless window-list ; we start with a list of just the current window
-        (setq window-list (list current-window)))
-      (if (= splits 1)          ; no more splits to make
-          (progn
-            (unless no-make-atom
-              (when (cdr window-list) ; single windows are already atomic
-                (window-make-atom (window-parent (car window-list)))))
-            window-list) ; return final window list
-        (when (eq orientation 'vertical) ; choose size function and side
-                                         ; if necessary
-          (fset 'get-size 'window-total-height))
-        (setq side 'below)
-        ;; calculate size of new window making sure any modulus goes to
-        ;; current window.
-        (setq new-size (floor (get-size current-window 'floor) splits))
-        (setq window-list ; split window and add new window to window list
-              (append window-list
-                      (list (split-window current-window new-size side))))
-        (select-window (list-last-item window-list))
-        ;; continue until done
-        (evenly-split-window (1- splits) orientation no-make-atom
-                             window-list)))))
+	(setq window-list (list current-window))
+	(setq original-window current-window))
+      (if (= splits 1)		; no more splits to make
+	  (progn
+	    (unless no-make-atom
+	      (when (cdr window-list) ; single windows are already atomic
+		(window-make-atom (window-parent (car window-list)))))
+	    (select-window original-window) ; change to original window
+	    window-list) ; return final window list
+	(when (eq orientation 'vertical) ; choose size function and side
+			         ; if necessary
+	  (fset 'get-size 'window-total-height)
+	  (setq side 'below))
+	;; calculate size of new window making sure any modulus goes to
+	;; current window.
+	(setq new-size (floor (get-size current-window 'floor) splits))
+	(setq window-list ; split window and add new window to window list
+	      (append window-list
+		      (list (split-window current-window new-size side))))
+	(select-window (list-last-item window-list))
+	;; continue until done
+	(evenly-split-window (1- splits) orientation no-make-atom
+			     window-list)))))
 
 (defun current-buffer-other-window (count)
   "Display current buffer to another window in the cyclic ordering of windows.
