@@ -57,9 +57,10 @@ Splits the current windows into SPLITS evenly sized windows. Any
 left over characters are distributed to the left or top most
 windows possible. If ORIENTATION is \"vertical\" windows are
 split vertically, otherwise they are split horizontally. Returns
-list of windows and leaves current window unchanged when
-finished. Makes splits into an atomic window unless NO-MAKE-ATOM
-is non-nil."
+a list of the split windows ordered from left to right or top to
+bottom and leaves the current window unchanged when finished.
+Makes splits into an atomic window unless NO-MAKE-ATOM is
+non-nil."
     (interactive "NNumber of windows: ")
     (when (< splits 1)
       (error "Must split into at least one window"))
