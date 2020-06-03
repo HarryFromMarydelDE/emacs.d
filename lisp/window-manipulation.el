@@ -28,8 +28,8 @@ windows created, from left to right."
   (let ((frame (selected-frame)))
     (lambda (buffer _)
       (when (eq frame (selected-frame))
-	(set-window-buffer window buffer)
-	window))))
+        (set-window-buffer window buffer)
+        window))))
 
 (defun delete-stale-buffer-action-functions ()
   "Remove display buffer action functions that no longer point to live windows."
@@ -37,22 +37,23 @@ windows created, from left to right."
     (dolist (subitem item)
       ;; only check cons cell attached window property
       (when (consp subitem) 
-	(when (eq (car subitem) 'attached-window)
-	  ;; Remove item when subitem no longer refers to a live window
-	  ;; in addition to preventing display-buffer-alist from accumulating
-	  ;; stale cruft, this should also free the window for garbage
-	  ;; collection
-	  (unless (window-live-p (cdr subitem))
-	    (customize-set-variable
-	     'display-buffer-alist
-	     (remove item display-buffer-alist))))))))
+        (when (eq (car subitem) 'attached-window)
+          ;; Remove item when subitem no longer refers to a live window
+          ;; in addition to preventing display-buffer-alist from accumulating
+          ;; stale cruft, this should also free the window for garbage
+          ;; collection
+          (unless (window-live-p (cdr subitem))
+            (customize-set-variable
+             'display-buffer-alist
+             (remove item display-buffer-alist))))))))
 (add-hook
  'window-configuration-change-hook
  'delete-stale-buffer-action-functions)
 
-(defun evenly-split-window (splits
-			    &optional orientation no-make-atom window-list)
-  "Split a window into SPLITS equally sized windows.
+(let (original-window) ; holds selected window when function is first called
+  (defun evenly-split-window (splits
+                              &optional orientation no-make-atom window-list)
+    "Split a window into SPLITS equally sized windows.
 Splits the current windows into SPLITS evenly sized windows. Any
 left over characters are distributed to the left or top most
 windows possible. If ORIENTATION is \"vertical\" windows are
@@ -60,36 +61,36 @@ split vertically, otherwise they are split horizontally. Returns
 list of windows and leaves current window unchanged when
 finished. Makes splits into an atomic window unless NO-MAKE-ATOM
 is non-nil."
-  (interactive "NNumber of windows: ")
-  (when (< splits 1)
-    (error "Must split into at least one window"))
-  
-  (let ((side 'right) ; side along which the split will take place
-	(get-size 'window-total-width)  ; function to retrieve window's size
-	(current-window (selected-window))
-	new-size) ; size of new window
-    (unless window-list ; we start with a list of just the current window
-      (setq window-list (list current-window)))
-    (if (= splits 1) ; no more splits to make
-	(progn
-	  (unless no-make-atom
-	    (when (cdr window-list)  ; single windows are already atomic
-	      (window-make-atom (window-parent (car window-list)))))
-	  window-list) ; return final window list
-      (when (eq orientation 'vertical)  ; choose size function and side
-					; if necessary
-	  (fset 'get-size 'window-total-height)
-	  (setq side 'below))
-      ;; calculate size of new window making sure any modulus goes to
-      ;; current window.
-      (setq new-size (floor (get-size current-window 'floor) splits))
-      (setq window-list ; split window and add new window to window list
-	    (append window-list
-		    (list (split-window current-window new-size side))))
-      (select-window (list-last-item window-list))
-      ;; continue until done
-      (evenly-split-window (1- splits) orientation no-make-atom
-			   window-list))))
+    (interactive "NNumber of windows: ")
+    (when (< splits 1)
+      (error "Must split into at least one window"))
+    
+    (let ((side 'right) ; side along which the split will take place
+          (get-size 'window-total-width) ; function to retrieve window's size
+          (current-window (selected-window))
+          new-size)             ; size of new window
+      (unless window-list ; we start with a list of just the current window
+        (setq window-list (list current-window)))
+      (if (= splits 1)          ; no more splits to make
+          (progn
+            (unless no-make-atom
+              (when (cdr window-list) ; single windows are already atomic
+                (window-make-atom (window-parent (car window-list)))))
+            window-list) ; return final window list
+        (when (eq orientation 'vertical) ; choose size function and side
+                                         ; if necessary
+          (fset 'get-size 'window-total-height))
+        (setq side 'below)
+        ;; calculate size of new window making sure any modulus goes to
+        ;; current window.
+        (setq new-size (floor (get-size current-window 'floor) splits))
+        (setq window-list ; split window and add new window to window list
+              (append window-list
+                      (list (split-window current-window new-size side))))
+        (select-window (list-last-item window-list))
+        ;; continue until done
+        (evenly-split-window (1- splits) orientation no-make-atom
+                             window-list)))))
 
 (defun current-buffer-other-window (count)
   "Display current buffer to another window in the cyclic ordering of windows.
@@ -102,8 +103,8 @@ COUNT is the numeric prefix argument.  Returns nil."
   (interactive "p")
   ;; store information on original buffer status
   (let ((original-buffer (current-buffer))
-	(original-point (point))
-	new-window)
+        (original-point (point))
+        new-window)
     (bury-buffer) ; remove buffer from current window
     (other-window count) ; change selected window
     (switch-to-buffer original-buffer) ; bring buffer to new window
