@@ -65,7 +65,7 @@ is non-nil."
       (error "Must split into at least one window"))
     
     (let ((side 'right) ; side along which the split will take place
-	  (get-size 'window-total-width) ; function to retrieve window's size
+	  get-size ; function to retrieve window's size
 	  (current-window (selected-window))
 	  new-size) ; size of new window
       (unless window-list ; we start with a list of just the current window
@@ -79,9 +79,11 @@ is non-nil."
 	    (select-window original-window) ; change to original window
 	    window-list) ; return final window list
 	;; choose size function and side if necessary
-	(when (eq orientation 'vertical)
-	  (fset 'get-size 'window-total-height)
-	  (setq side 'below))
+	(if (eq orientation 'vertical)
+            (progn
+              (fset 'get-size 'window-total-height)
+              (setq side 'below))
+          (fset 'get-size 'window-total-width))
 	;; calculate size of new window making sure any modulus goes to
 	;; current window.
 	(setq new-size (floor (get-size current-window 'floor) splits))
