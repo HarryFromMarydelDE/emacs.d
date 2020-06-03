@@ -67,19 +67,19 @@ is non-nil."
     (let ((side 'right) ; side along which the split will take place
 	  (get-size 'window-total-width) ; function to retrieve window's size
 	  (current-window (selected-window))
-	  new-size)		; size of new window
+	  new-size) ; size of new window
       (unless window-list ; we start with a list of just the current window
 	(setq window-list (list current-window))
 	(setq original-window current-window))
-      (if (= splits 1)		; no more splits to make
+      (if (= splits 1) ; no more splits to make
 	  (progn
 	    (unless no-make-atom
 	      (when (cdr window-list) ; single windows are already atomic
 		(window-make-atom (window-parent (car window-list)))))
 	    (select-window original-window) ; change to original window
 	    window-list) ; return final window list
-	(when (eq orientation 'vertical) ; choose size function and side
-			         ; if necessary
+	;; choose size function and side if necessary
+	(when (eq orientation 'vertical)
 	  (fset 'get-size 'window-total-height)
 	  (setq side 'below))
 	;; calculate size of new window making sure any modulus goes to
