@@ -127,6 +127,7 @@
 ;; development
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 ;; git
+(load "magit-mode") ; magit-after-save-refresh-status available at start
 (global-unset-key (kbd "C-x g"))
 (global-set-key (kbd "<f5>") 'magit-status)
 (add-hook 'after-save-hook 'magit-after-save-refresh-status t)
