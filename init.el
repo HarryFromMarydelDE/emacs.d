@@ -46,7 +46,7 @@
  '(org-log-done (quote time))
  '(package-selected-packages
    (quote
-    (magit cider clojure-mode projectile paredit multiple-cursors web-server impatient-mode html5-schema web-mode expand-region company sly)))
+    (emmet-mode magit cider clojure-mode projectile paredit multiple-cursors web-server impatient-mode html5-schema web-mode expand-region company sly)))
  '(scroll-bar-mode nil)
  '(scroll-error-top-bottom t)
  '(tool-bar-mode nil)
@@ -152,5 +152,8 @@
 	(nxml-mode . nil)))
 (add-hook 'web-mode-hook 'impatient-mode)
 (add-hook 'css-mode-hook 'impatient-mode)
+;; emmet
+(add-hook 'web-mode-hook 'emmet-mode)
+(add-hook 'css-mode-hook 'emmet-mode)
 ;; major mode
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
