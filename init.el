@@ -51,16 +51,6 @@
  '(scroll-error-top-bottom t)
  '(tool-bar-mode nil)
  '(winner-mode t))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(cursor ((t (:background "white"))))
- '(mc/cursor-bar-face ((t (:background "cyan" :height 1))))
- '(web-mode-html-tag-bracket-face ((t (:foreground "cyan"))))
- '(web-mode-html-tag-face ((t (:foreground "cyan")))))
-
 
 ;; expand selections more conveniently
 (require 'expand-region)
@@ -157,3 +147,13 @@
 (add-hook 'css-mode-hook 'emmet-mode)
 ;; major mode
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(cursor ((t (:background "white"))))
+ '(mc/cursor-bar-face ((t (:background "cyan" :height 1))))
+ '(web-mode-html-tag-bracket-face ((t (:foreground "cyan"))))
+ '(web-mode-html-tag-face ((t (:foreground "cyan")))))
