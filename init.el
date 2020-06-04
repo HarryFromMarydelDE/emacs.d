@@ -74,6 +74,13 @@
 (add-hook 'clojure-mode-hook    #'paredit-mode)
 (add-hook 'cider-mode-hook      #'paredit-mode)
 (add-hook 'text-mode-hook       #'flyspell-mode)
+;; find multiple files
+(load "dired-x")
+;; override f command in dired to find all marked files
+(define-key dired-mode-map (kbd "f") (lambda ()
+                                       (interactive)
+                                       (dired-do-find-marked-files t)
+                                       (dired-unmark-all-marks)))
 
 ;; sly
 ;; The SBCL binary and command-line arguments for sly
