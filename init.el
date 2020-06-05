@@ -120,6 +120,8 @@
 (global-unset-key (kbd "C-<down-mouse-1>")) ; ctrl-mouse1 to add a cursor
 (global-set-key (kbd "C-<mouse-1>") 'mc/add-cursor-on-click)
 (global-set-key (kbd "C-c c r") 'mc/edit-lines) ; every line of region
+(with-eval-after-load 'multiple-cursors-core
+  (define-key mc/keymap (kbd "<return>") nil))
 
 ;; development
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
