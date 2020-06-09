@@ -150,6 +150,11 @@
 ;; major mode
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 
+;; preload files
+(find-file-noselect "~/.emacs.d/init.el")
+(find-file-noselect "~/.emacs.d")
+(find-file-noselect "~/School") ; school folder
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
