@@ -155,6 +155,7 @@
 (find-file-noselect "~/.emacs.d")
 (find-file-noselect "~/School") ; school folder
 
+;; TODO: run every time window configuration changes
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

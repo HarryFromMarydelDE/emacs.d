@@ -1,3 +1,5 @@
+;; TODO: test that buffer is actually visiting a file before offering
+;; to save
 (defun kill-buffer-with-save (&optional buffer-or-name)
   "Kill buffer, asking to save if modified.
 Kill the buffer specified by BUFFER-OR-NAME.  The argument may be
