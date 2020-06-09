@@ -130,6 +130,7 @@
 (global-unset-key (kbd "C-x g"))
 (global-set-key (kbd "<f5>") 'magit-status)
 (add-hook 'after-save-hook 'magit-after-save-refresh-status t)
+;; TODO: bind space to change from marked to unmarked and visa-versa
 
 ;; web development
 (with-eval-after-load 'web-mode
