@@ -46,7 +46,7 @@
  '(org-log-done (quote time))
  '(package-selected-packages
    (quote
-    (ssh-agency emmet-mode magit cider clojure-mode projectile paredit multiple-cursors web-server impatient-mode html5-schema web-mode expand-region company sly)))
+    (indium ssh-agency emmet-mode magit cider clojure-mode projectile paredit multiple-cursors web-server impatient-mode html5-schema web-mode expand-region company sly)))
  '(scroll-bar-mode nil)
  '(scroll-error-top-bottom t)
  '(tool-bar-mode nil)
