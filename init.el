@@ -46,7 +46,7 @@
  '(org-log-done (quote time))
  '(package-selected-packages
    (quote
-    (vterm indium ssh-agency emmet-mode magit cider clojure-mode projectile paredit multiple-cursors web-server impatient-mode html5-schema web-mode expand-region company sly)))
+    (gitignore-mode markdown-mode vterm indium ssh-agency emmet-mode magit cider clojure-mode projectile paredit multiple-cursors web-server impatient-mode html5-schema web-mode expand-region company sly)))
  '(scroll-bar-mode nil)
  '(scroll-error-top-bottom t)
  '(tool-bar-mode nil)
@@ -128,6 +128,7 @@
 
 ;; development
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
+(add-hook 'gitignore-mode-hook 'flyspell-prog-mode)
 ;; git
 (load "magit-mode") ; magit-after-save-refresh-status available at start
 (global-unset-key (kbd "C-x g"))
@@ -151,8 +152,9 @@
 ;; emmet
 (add-hook 'web-mode-hook 'emmet-mode)
 (add-hook 'css-mode-hook 'emmet-mode)
-;; major mode
+;; major modes
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
 ;; preload files
 (find-file-noselect "~/.emacs.d/init.el")
