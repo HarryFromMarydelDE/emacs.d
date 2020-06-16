@@ -149,6 +149,7 @@
 	(nxml-mode . nil)))
 (add-hook 'web-mode-hook 'impatient-mode)
 (add-hook 'css-mode-hook 'impatient-mode)
+(add-hook 'js2-mode-hook 'impatient-mode)
 ;; emmet
 (add-hook 'web-mode-hook 'emmet-mode)
 (add-hook 'css-mode-hook 'emmet-mode)
