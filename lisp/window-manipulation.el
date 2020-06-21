@@ -56,7 +56,7 @@ windows created, from left to right."
   (dolist (item display-buffer-alist)
     (dolist (subitem item)
       ;; only check cons cell attached window property
-      (when (consp subitem) 
+      (when (consp subitem)
 	(when (eq (car subitem) 'attached-window)
 	  ;; Remove item when subitem no longer refers to a live window
 	  ;; in addition to preventing display-buffer-alist from accumulating
@@ -85,7 +85,7 @@ non-nil."
     (interactive "NNumber of windows: ")
     (when (< splits 1)
       (error "Must split into at least one window"))
-    
+
     (let ((side 'right) ; side along which the split will take place
 	  get-size ; function to retrieve window's size
 	  (current-window (selected-window))
