@@ -13,6 +13,7 @@
 (load "buffer-manipulation")
 (load "web-editing")
 (load "convenience-functions")
+(load "org-mode-local")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -64,6 +65,8 @@
 (add-hook 'clojure-mode-hook    #'paredit-mode)
 (add-hook 'cider-mode-hook      #'paredit-mode)
 (add-hook 'text-mode-hook       #'flyspell-mode)
+;; in DocView mode, reload docs when changed on disk
+(add-hook 'doc-view-mode-hook   #'auto-revert-mode)
 ;; find multiple files
 (load "dired-x")
 ;; override f command in dired to find all marked files
