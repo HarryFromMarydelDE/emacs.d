@@ -22,6 +22,27 @@ windows created, from left to right."
 	   display-buffer-alist))
     window-list))
 
+;; TODO - Make opening DocView mode in right window actually work
+(defun document-windows (&optional fullscreen)
+  "Create a window configuration ideal for use editing documents.
+Divides the current window into two equal width windows, with
+the left-most reserved DocView mode buffers. If FULLSCREEN is
+non-nil, set fullscreen window parameter to value. Return list of
+windows created, from left to right."
+  (interactive)
+  (when fullscreen
+    (set-frame-parameter nil 'fullscreen fullscreen))
+  (let* ((window-list (evenly-split-window 2))
+	 (left-window (nth 0 window-list))
+	 (right-window (nth 1 window-list)))
+    (customize-set-variable
+     'display-buffer-alist
+     (cons `(,(derived-mode-p 'doc-view-mode)
+             ,(specific-windowf right-window)
+             (attached-window . ,right-window))
+           display-buffer-alist))
+    window-list))
+
 (defun specific-windowf (window)
   "Return buffer display action function to display buffer in specific WINDOW on current frame."
   (let ((frame (selected-frame)))
