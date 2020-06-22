@@ -162,8 +162,12 @@
 
 ;; preload files
 (find-file-noselect "~/.emacs.d/init.el")
-(find-file-noselect "~/.emacs.d")
+(find-file-noselect "~/.emacs.d/lisp")
 (find-file-noselect "~/School") ; school folder
+;; personal fileshare folder for Netlify
+(find-file-noselect "~/School/personal-fileshare")
+ ; Web Fundamentals Build Week project folder
+(find-file-noselect "~/School/Web Fundamentals/Build Week/marketing-page")
 
 ;; TODO: run every time window configuration changes
 (custom-set-faces
@@ -175,3 +179,5 @@
  '(mc/cursor-bar-face ((t (:background "cyan" :height 1))))
  '(web-mode-html-tag-bracket-face ((t (:foreground "cyan"))))
  '(web-mode-html-tag-face ((t (:foreground "cyan")))))
+
+; LocalWords:  fileshare LocalWords
