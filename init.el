@@ -163,12 +163,13 @@
 
 ;; preload files
 (find-file-noselect "~/.emacs.d/init.el")
+(find-file-noselect "~/")
 (find-file-noselect "~/.emacs.d/lisp")
 (find-file-noselect "~/School") ; school folder
 ;; personal fileshare folder for Netlify
 (find-file-noselect "~/School/personal-fileshare")
  ; Web Fundamentals Build Week project folder
-(find-file-noselect "~/School/Web Fundamentals/Build Week/marketing-page")
+(find-file-noselect "~/School/Web Applications I/Applied JavaScript")
 
 ;; TODO: run every time window configuration changes
 (custom-set-faces
