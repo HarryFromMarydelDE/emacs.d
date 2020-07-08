@@ -182,4 +182,4 @@
  '(web-mode-html-tag-bracket-face ((t (:foreground "cyan"))))
  '(web-mode-html-tag-face ((t (:foreground "cyan")))))
 
-; LocalWords:  fileshare LocalWords
+; LocalWords:  fileshare LocalWords emacs noinform
