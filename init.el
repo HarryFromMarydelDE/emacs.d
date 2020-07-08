@@ -164,7 +164,7 @@
 ;; preload files
 (find-file-noselect "~/.emacs.d/init.el")
 (find-file-noselect "~/")
-(find-file-noselect "~/.emacs.d/lisp")
+(find-file-noselect "~/.emacs.d")
 (find-file-noselect "~/School") ; school folder
 ;; personal fileshare folder for Netlify
 (find-file-noselect "~/School/personal-fileshare")
