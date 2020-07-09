@@ -48,7 +48,7 @@
  '(org-log-done (quote time))
  '(package-selected-packages
    (quote
-    (rjsx-mode indium js2-mode nodejs-repl lorem-ipsum wucuo gitignore-mode markdown-mode vterm ssh-agency emmet-mode magit cider clojure-mode projectile paredit multiple-cursors web-server impatient-mode web-mode expand-region company sly)))
+    (exec-path-from-shell rjsx-mode indium js2-mode nodejs-repl lorem-ipsum wucuo gitignore-mode markdown-mode vterm ssh-agency emmet-mode magit cider clojure-mode projectile paredit multiple-cursors web-server impatient-mode web-mode expand-region company sly)))
  '(scroll-bar-mode nil)
  '(scroll-error-top-bottom t)
  '(tool-bar-mode nil)
@@ -170,6 +170,9 @@
 (find-file-noselect "~/School/personal-fileshare")
  ; Web Fundamentals Build Week project folder
 (find-file-noselect "~/School/Web Applications I/Applied JavaScript")
+
+;; OS stuff
+(exec-path-from-shell-initialize)
 
 ;; TODO: run every time window configuration changes
 (custom-set-faces
