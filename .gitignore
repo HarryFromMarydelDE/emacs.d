@@ -6,3 +6,5 @@
 !/lisp/
 /lisp/*
 !/lisp/*.el
+!/template/
+!/template/gitignore
