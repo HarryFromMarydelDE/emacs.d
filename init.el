@@ -160,7 +160,8 @@
 (add-hook 'css-mode-hook 'emmet-mode)
 ;; major modes
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("components\\/.*\\.js\\'" . rjsx-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
+
 
 ;; preload files and directories
 (find-file-noselect "~/.emacs.d/init.el")
