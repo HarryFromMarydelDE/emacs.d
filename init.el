@@ -162,15 +162,14 @@
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("components\\/.*\\.js\\'" . rjsx-mode))
 
-;; preload files
+;; preload files and directories
 (find-file-noselect "~/.emacs.d/init.el")
 (find-file-noselect "~/")
 (find-file-noselect "~/.emacs.d")
 (find-file-noselect "~/School") ; school folder
 ;; personal fileshare folder for Netlify
 (find-file-noselect "~/School/personal-fileshare")
- ; Web Fundamentals Build Week project folder
-(find-file-noselect "~/School/Web Applications I/Applied JavaScript")
+(find-file-noselect "~/School/Web Applications I/Intro to React")
 
 ;; OS stuff
 (exec-path-from-shell-initialize)
