@@ -46,6 +46,7 @@
  '(menu-bar-mode nil)
  '(org-ditaa-jar-path "/usr/share/java/ditaa/ditaa-0.11.jar")
  '(org-log-done (quote time))
+ '(org-support-shift-select (quote always))
  '(package-selected-packages
    (quote
     (exec-path-from-shell rjsx-mode indium js2-mode nodejs-repl lorem-ipsum wucuo gitignore-mode markdown-mode vterm ssh-agency emmet-mode magit cider clojure-mode projectile paredit multiple-cursors web-server impatient-mode web-mode expand-region company sly)))
