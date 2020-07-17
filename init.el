@@ -171,7 +171,8 @@
 (find-file-noselect "~/.emacs.d/init.el")
 (find-file-noselect "~/")
 (find-file-noselect "~/.emacs.d")
-(find-file-noselect "~/School") ; school folder
+(find-file-noselect "~/School")
+(find-file-noselect "~/Projects")
 ;; personal fileshare folder for Netlify
 (find-file-noselect "~/School/personal-fileshare")
 (find-file-noselect "~/School/Web Applications I/Intro to React")
