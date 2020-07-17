@@ -27,6 +27,7 @@
  '(blink-cursor-mode t)
  '(company-idle-delay 0)
  '(company-minimum-prefix-length 1)
+ '(create-lockfiles nil)
  '(cua-remap-control-v nil)
  '(cursor-in-non-selected-windows nil)
  '(cursor-type (quote bar))
