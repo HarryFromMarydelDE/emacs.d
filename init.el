@@ -54,6 +54,9 @@
  '(scroll-bar-mode nil)
  '(scroll-error-top-bottom t)
  '(tool-bar-mode nil)
+ '(web-mode-code-indent-offset 2)
+ '(web-mode-css-indent-offset 2)
+ '(web-mode-markup-indent-offset 2)
  '(winner-mode t))
 
 ;; expand selections more conveniently
