@@ -175,7 +175,7 @@
 (find-file-noselect "~/Projects")
 ;; personal fileshare folder for Netlify
 (find-file-noselect "~/School/personal-fileshare")
-(find-file-noselect "~/School/Web Applications I/Intro to React")
+(find-file-noselect "~/School/Web Applications I/Single Page Applications")
 
 ;; OS stuff
 (exec-path-from-shell-initialize)
@@ -192,3 +192,4 @@
  '(web-mode-html-tag-face ((t (:foreground "cyan")))))
 
 ; LocalWords:  fileshare LocalWords emacs noinform
+(put 'upcase-region 'disabled nil)
