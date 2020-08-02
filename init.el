@@ -46,6 +46,7 @@
  '(load-prefer-newer t)
  '(menu-bar-mode nil)
  '(org-ditaa-jar-path "/usr/share/java/ditaa/ditaa-0.11.jar")
+ '(org-footnote-auto-adjust t)
  '(org-log-done (quote time))
  '(org-support-shift-select (quote always))
  '(package-selected-packages
@@ -175,7 +176,7 @@
 (find-file-noselect "~/Projects")
 ;; personal fileshare folder for Netlify
 (find-file-noselect "~/School/personal-fileshare")
-(find-file-noselect "~/School/Web Applications I/Single Page Applications")
+(find-file-noselect "~/School/Web Applications II/Advanced React/")
 
 ;; OS stuff
 (exec-path-from-shell-initialize)
