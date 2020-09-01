@@ -81,6 +81,8 @@
                                        (interactive)
                                        (dired-do-find-marked-files t)
                                        (dired-unmark-all-marks)))
+;; set gnome-keyring SSH socket for magit
+(setenv "SSH_AUTH_SOCK" "/run/user/1000/keyring/ssh")
 
 ;; sly
 ;; The SBCL binary and command-line arguments for sly
