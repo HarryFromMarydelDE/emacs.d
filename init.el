@@ -180,7 +180,7 @@
 (find-file-noselect "~/Projects")
 ;; personal fileshare folder for Netlify
 (find-file-noselect "~/School/personal-fileshare")
-(find-file-noselect "~/School/Java/RDBMS and Intro to APIs")
+(find-file-noselect "~/School/Java/Java Fundamentals")
 
 ;; OS stuff
 (exec-path-from-shell-initialize)
