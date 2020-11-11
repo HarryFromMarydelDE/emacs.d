@@ -153,7 +153,7 @@
   (define-key web-mode-map (kbd "M-r") 'web-mode-element-unwrap)
   (define-key web-mode-map (kbd "<f1>") 'web-mode-element-wrap))
 ;; impatient mode
-(httpd-start) ; start http server
+;;(httpd-start) ; start http server
 (setq imp-default-user-filters
       '((html-mode . nil)
 	(web-mode . nil)
@@ -169,7 +169,7 @@
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
 ;; prettier
-(add-hook 'after-init-hook #'global-prettier-mode)
+;;(add-hook 'after-init-hook #'global-prettier-mode)
 
 
 ;; preload files and directories
@@ -177,13 +177,13 @@
 (find-file-noselect "~/")
 (find-file-noselect "~/.emacs.d")
 (find-file-noselect "~/School")
-(find-file-noselect "~/Projects")
+;(find-file-noselect "~/Projects")
 ;; personal fileshare folder for Netlify
-(find-file-noselect "~/School/personal-fileshare")
-(find-file-noselect "~/School/Java/Java Fundamentals")
+;(find-file-noselect "~/School/personal-fileshare")
+;(find-file-noselect "~/School/Java/Java Fundamentals")
 
 ;; OS stuff
-(exec-path-from-shell-initialize)
+;;(exec-path-from-shell-initialize)
 
 ;; TODO: run every time window configuration changes
 (custom-set-faces
