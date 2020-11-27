@@ -11,6 +11,7 @@ windows created, from left to right."
   (interactive)
   (when fullscreen
     (set-frame-parameter nil 'fullscreen fullscreen))
+  (set-cursor-color "white")
   (let* ((window-list (evenly-split-window 3))
 	 (left-window (nth 0 window-list))
 	 (right-window (nth 2 window-list)))
@@ -32,6 +33,7 @@ windows created, from left to right."
   (interactive)
   (when fullscreen
     (set-frame-parameter nil 'fullscreen fullscreen))
+  (set-cursor-color "white")
   (let* ((window-list (evenly-split-window 2))
 	 (left-window (nth 0 window-list))
 	 (right-window (nth 1 window-list)))
