@@ -9,9 +9,10 @@ the left-most reserved for *Help* and *info*. If FULLSCREEN is
 non-nil, set fullscreen window parameter to value. Return list of
 windows created, from left to right."
   (interactive)
-  (when fullscreen
-    (set-frame-parameter nil 'fullscreen fullscreen))
   (set-cursor-color "white")
+  (if fullscreen
+      (toggle-frame-fullscreen)
+    (toggle-frame-maximized))
   (setq frame-title-format "%b")
   (let* ((window-list (evenly-split-window 3))
 	 (left-window (nth 0 window-list))
@@ -32,9 +33,10 @@ the left-most reserved DocView mode buffers. If FULLSCREEN is
 non-nil, set fullscreen window parameter to value. Return list of
 windows created, from left to right."
   (interactive)
-  (when fullscreen
-    (set-frame-parameter nil 'fullscreen fullscreen))
   (set-cursor-color "white")
+  (if fullscreen
+      (toggle-frame-fullscreen)
+    (toggle-frame-maximized))
   (setq frame-title-format "%b")
   (let* ((window-list (evenly-split-window 2))
 	 (left-window (nth 0 window-list))
