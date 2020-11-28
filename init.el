@@ -50,7 +50,7 @@
  '(org-log-done 'time)
  '(org-support-shift-select 'always)
  '(package-selected-packages
-   '(clojure-mode-extra-font-locking clojure-quick-repls markdown-mode+ markdown-toc ssh-config-mode web-mode-edit-element prettier exec-path-from-shell rjsx-mode indium js2-mode nodejs-repl lorem-ipsum wucuo gitignore-mode markdown-mode vterm ssh-agency emmet-mode magit cider clojure-mode projectile paredit multiple-cursors web-server impatient-mode web-mode expand-region company sly))
+   '(yaml-mode clojure-mode-extra-font-locking clojure-quick-repls markdown-mode+ markdown-toc ssh-config-mode web-mode-edit-element prettier exec-path-from-shell rjsx-mode indium js2-mode nodejs-repl lorem-ipsum wucuo gitignore-mode markdown-mode vterm ssh-agency emmet-mode magit cider clojure-mode projectile paredit multiple-cursors web-server impatient-mode web-mode expand-region company sly))
  '(scroll-bar-mode nil)
  '(scroll-error-top-bottom t)
  '(tool-bar-mode nil)
