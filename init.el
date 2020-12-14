@@ -50,7 +50,7 @@
  '(org-log-done 'time)
  '(org-support-shift-select 'always)
  '(package-selected-packages
-   '(yaml-mode clojure-mode-extra-font-locking clojure-quick-repls markdown-mode+ markdown-toc ssh-config-mode web-mode-edit-element prettier exec-path-from-shell rjsx-mode indium js2-mode nodejs-repl lorem-ipsum wucuo gitignore-mode markdown-mode vterm ssh-agency emmet-mode magit cider clojure-mode projectile paredit multiple-cursors web-server impatient-mode web-mode expand-region company sly))
+   '(wc-mode nyan-mode python-black yaml-mode clojure-mode-extra-font-locking clojure-quick-repls markdown-mode+ markdown-toc ssh-config-mode web-mode-edit-element prettier exec-path-from-shell rjsx-mode indium js2-mode nodejs-repl lorem-ipsum wucuo gitignore-mode markdown-mode vterm ssh-agency emmet-mode magit cider clojure-mode projectile paredit multiple-cursors web-server impatient-mode web-mode expand-region company sly))
  '(scroll-bar-mode nil)
  '(scroll-error-top-bottom t)
  '(tool-bar-mode nil)
@@ -192,7 +192,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(cursor ((t (:background "white"))))
  '(mc/cursor-bar-face ((t (:background "cyan" :height 1))))
  '(web-mode-html-tag-bracket-face ((t (:foreground "cyan"))))
  '(web-mode-html-tag-face ((t (:foreground "cyan")))))
